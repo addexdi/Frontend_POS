@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://dreamspos.dreamguystech.com/html/template/editcategory.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<meta name="description" content="POS - Bootstrap Admin Template">
+<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+<meta name="author" content="Dreamguys - Bootstrap Admin Template">
+<meta name="robots" content="noindex, nofollow">
+<title>Edit Category</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="./img/ICON.svg">
+
+<link rel="stylesheet" href="./editcategory_files/bootstrap.min.css">
+
+<link rel="stylesheet" href="./editcategory_files/animate.css">
+
+<link rel="stylesheet" href="./editcategory_files/select2.min.css">
+
+<link rel="stylesheet" href="./editcategory_files/dataTables.bootstrap4.min.css">
+
+<link rel="stylesheet" href="./editcategory_files/fontawesome.min.css">
+<link rel="stylesheet" href="./editcategory_files/all.min.css">
+
+<link rel="stylesheet" href="./css/style.css">
+<style>.swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;overflow-y:hidden;background:#fff;box-shadow:0 0 .625em #d9d9d9}.swal2-popup.swal2-toast .swal2-header{flex-direction:row;padding:0}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:static;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;padding:0;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:700}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{font-size:.25em}}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{flex-basis:auto!important;width:auto;height:auto;margin:0 .3125em;padding:0}.swal2-popup.swal2-toast .swal2-styled{margin:0 .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(100,150,200,.5)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.8em;left:-.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-toast-animate-success-line-tip .75s;animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-toast-animate-success-line-long .75s;animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:swal2-toast-show .5s;animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:swal2-toast-hide .1s forwards;animation:swal2-toast-hide .1s forwards}.swal2-container{display:flex;position:fixed;z-index:1060;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}.swal2-container.swal2-backdrop-show,.swal2-container.swal2-noanimation{background:rgba(0,0,0,.4)}.swal2-container.swal2-backdrop-hide{background:0 0!important}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-bottom-end>:first-child,.swal2-container.swal2-bottom-left>:first-child,.swal2-container.swal2-bottom-right>:first-child,.swal2-container.swal2-bottom-start>:first-child,.swal2-container.swal2-bottom>:first-child{margin-top:auto}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-no-transition{transition:none!important}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-popup{display:none;position:relative;box-sizing:border-box;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border:none;border-radius:5px;background:#fff;font-family:inherit;font-size:1rem}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-header{display:flex;flex-direction:column;align-items:center;padding:0 1.8em}.swal2-title{position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-actions{display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:100%;margin:1.25em auto 0;padding:0 1.6em}.swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-loader{display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 transparent #2778c4 transparent}.swal2-styled{margin:.3125em;padding:.625em 1.1em;box-shadow:none;font-weight:500}.swal2-styled:not([disabled]){cursor:pointer}.swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#2778c4;color:#fff;font-size:1.0625em}.swal2-styled.swal2-deny{border:0;border-radius:.25em;background:initial;background-color:#d14529;color:#fff;font-size:1.0625em}.swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#757575;color:#fff;font-size:1.0625em}.swal2-styled:focus{outline:0;box-shadow:0 0 0 3px rgba(100,150,200,.5)}.swal2-styled::-moz-focus-inner{border:0}.swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;height:.25em;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.swal2-timer-progress-bar{width:100%;height:.25em;background:rgba(0,0,0,.2)}.swal2-image{max-width:100%;margin:1.25em auto}.swal2-close{position:absolute;z-index:2;top:0;right:0;align-items:center;justify-content:center;width:1.2em;height:1.2em;padding:0;overflow:hidden;transition:color .1s ease-out;border:none;border-radius:5px;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer}.swal2-close:hover{transform:none;background:0 0;color:#f27474}.swal2-close:focus{outline:0;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}.swal2-close::-moz-focus-inner{border:0}.swal2-content{z-index:1;justify-content:center;margin:0;padding:0 1.6em;color:#545454;font-size:1.125em;font-weight:400;line-height:normal;text-align:center;word-wrap:break-word}.swal2-checkbox,.swal2-file,.swal2-input,.swal2-radio,.swal2-select,.swal2-textarea{margin:1em auto}.swal2-file,.swal2-input,.swal2-textarea{box-sizing:border-box;width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;background:inherit;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);color:inherit;font-size:1.125em}.swal2-file.swal2-inputerror,.swal2-input.swal2-inputerror,.swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-file:focus,.swal2-input:focus,.swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 0 3px rgba(100,150,200,.5)}.swal2-file::-moz-placeholder,.swal2-input::-moz-placeholder,.swal2-textarea::-moz-placeholder{color:#ccc}.swal2-file:-ms-input-placeholder,.swal2-input:-ms-input-placeholder,.swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-file::placeholder,.swal2-input::placeholder,.swal2-textarea::placeholder{color:#ccc}.swal2-range{margin:1em auto;background:#fff}.swal2-range input{width:80%}.swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}.swal2-range input,.swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-input{height:2.625em;padding:0 .75em}.swal2-input[type=number]{max-width:10em}.swal2-file{background:inherit;font-size:1.125em}.swal2-textarea{height:6.75em;padding:.75em}.swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:inherit;color:inherit;font-size:1.125em}.swal2-checkbox,.swal2-radio{align-items:center;justify-content:center;background:#fff;color:inherit}.swal2-checkbox label,.swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-checkbox input,.swal2-radio input{margin:0 .4em}.swal2-input-label{display:flex;justify-content:center;margin:1em auto}.swal2-validation-message{display:none;align-items:center;justify-content:center;margin:0 -2.7em;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}.swal2-validation-message::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}.swal2-icon{position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;border:.25em solid transparent;border-radius:50%;font-family:inherit;line-height:5em;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474;color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}.swal2-icon.swal2-error.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-success{border-color:#a5dc86;color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:0 0 1.25em;padding:0;background:inherit;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{right:auto;left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-webkit-keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@-webkit-keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@-webkit-keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@-webkit-keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-container{top:auto;right:auto;bottom:auto;left:auto;max-width:calc(100% - .625em * 2);background-color:transparent!important}body.swal2-no-backdrop .swal2-container>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-container.swal2-top{top:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-top-left,body.swal2-no-backdrop .swal2-container.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-top-end,body.swal2-no-backdrop .swal2-container.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-container.swal2-center{top:50%;left:50%;transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-left,body.swal2-no-backdrop .swal2-container.swal2-center-start{top:50%;left:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-end,body.swal2-no-backdrop .swal2-container.swal2-center-right{top:50%;right:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom{bottom:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom-left,body.swal2-no-backdrop .swal2-container.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-bottom-end,body.swal2-no-backdrop .swal2-container.swal2-bottom-right{right:0;bottom:0}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static!important}}body.swal2-toast-shown .swal2-container{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validation-message{font-size:1em}</style></head>
+<body>
+<div id="global-loader" style="display: none;">
+<div class="whirly-loader"> </div>
+</div>
+
+<div class="main-wrapper">
+
+<div class="header">
+
+<div class="header-left active">
+<a href="./index.html" class="logo">
+<img src="./img/BABS-SOLUTIONS.svg" alt="">
+</a>
+<a href="./index.html" class="logo-small">
+<img src="./img/ICON.svg" alt="">
+</a>
+<a id="toggle_btn" href="javascript:void(0);">
+</a>
+</div>
+
+<a id="mobile_btn" class="mobile_btn" href="./editcategory.html#sidebar">
+<span class="bar-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</a>
+
+<ul class="nav user-menu">
+
+<li class="nav-item">
+<div class="top-nav-search">
+<a href="javascript:void(0);" class="responsive-search">
+<i class="fa fa-search"></i>
+</a>
+<form action="./editcategory.html#">
+<div class="searchinputs">
+<input type="text" placeholder="Search Here ...">
+<div class="search-addon">
+<span><img src="./editcategory_files/closes.svg" alt="img"></span>
+</div>
+</div>
+<a class="btn" id="searchdiv"><img src="./editcategory_files/search.svg" alt="img"></a>
+</form>
+</div>
+</li>
+
+
+<li class="nav-item dropdown has-arrow flag-nav">
+<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
+<img src="./editcategory_files/us1.png" alt="" height="20">
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<a href="javascript:void(0);" class="dropdown-item">
+<img src="./editcategory_files/us.png" alt="" height="16"> English
+</a>
+<a href="javascript:void(0);" class="dropdown-item">
+<img src="./editcategory_files/fr.png" alt="" height="16"> French
+</a>
+<a href="javascript:void(0);" class="dropdown-item">
+<img src="./editcategory_files/es.png" alt="" height="16"> Spanish
+</a>
+<a href="javascript:void(0);" class="dropdown-item">
+<img src="./editcategory_files/de.png" alt="" height="16"> German
+</a>
+</div>
+</li>
+
+
+<li class="nav-item dropdown">
+<a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+<img src="./editcategory_files/notification-bing.svg" alt="img"> <span class="badge rounded-pill">4</span>
+</a>
+<div class="dropdown-menu notifications">
+<div class="topnav-dropdown-header">
+<span class="notification-title">Notifications</span>
+<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+</div>
+<div class="noti-content">
+<ul class="notification-list">
+<li class="notification-message">
+<a href="./activities.html">
+<div class="media d-flex">
+<span class="avatar flex-shrink-0">
+<img alt="" src="./editcategory_files/avatar-02.jpg">
+</span>
+<div class="media-body flex-grow-1">
+<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+</div>
+</div>
+</a>
+</li>
+<li class="notification-message">
+<a href="./activities.html">
+<div class="media d-flex">
+<span class="avatar flex-shrink-0">
+<img alt="" src="./editcategory_files/avatar-03.jpg">
+</span>
+<div class="media-body flex-grow-1">
+<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+</div>
+</div>
+</a>
+</li>
+<li class="notification-message">
+<a href="./activities.html">
+<div class="media d-flex">
+<span class="avatar flex-shrink-0">
+<img alt="" src="./editcategory_files/avatar-06.jpg">
+</span>
+<div class="media-body flex-grow-1">
+<p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+</div>
+</div>
+</a>
+</li>
+<li class="notification-message">
+<a href="./activities.html">
+<div class="media d-flex">
+<span class="avatar flex-shrink-0">
+<img alt="" src="./editcategory_files/avatar-17.jpg">
+</span>
+<div class="media-body flex-grow-1">
+<p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+</div>
+</div>
+</a>
+</li>
+<li class="notification-message">
+<a href="./activities.html">
+<div class="media d-flex">
+<span class="avatar flex-shrink-0">
+<img alt="" src="./editcategory_files/avatar-13.jpg">
+</span>
+<div class="media-body flex-grow-1">
+<p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+<p class="noti-time"><span class="notification-time">2 days ago</span></p>
+</div>
+</div>
+</a>
+</li>
+</ul>
+</div>
+<div class="topnav-dropdown-footer">
+<a href="./activities.html">View all Notifications</a>
+</div>
+</div>
+</li>
+
+<li class="nav-item dropdown has-arrow main-drop">
+<a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
+<span class="user-img"><img src="./editcategory_files/avator1.jpg" alt="">
+<span class="status online"></span></span>
+</a>
+<div class="dropdown-menu menu-drop-user">
+<div class="profilename">
+<div class="profileset">
+<span class="user-img"><img src="./editcategory_files/avator1.jpg" alt="">
+<span class="status online"></span></span>
+<div class="profilesets">
+<h6>John Doe</h6>
+<h5>Admin</h5>
+</div>
+</div>
+<hr class="m-0">
+<a class="dropdown-item" href="./profile.html"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user me-2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> My Profile</a>
+<a class="dropdown-item" href="./generalsettings.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings me-2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</a>
+<hr class="m-0">
+<a class="dropdown-item logout pb-0" href="./signin.html"><img src="./editcategory_files/log-out.svg" class="me-2" alt="img">Logout</a>
+</div>
+</div>
+</li>
+</ul>
+
+
+<div class="dropdown mobile-user-menu">
+<a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+<div class="dropdown-menu dropdown-menu-right">
+<a class="dropdown-item" href="./profile.html">My Profile</a>
+<a class="dropdown-item" href="./generalsettings.html">Settings</a>
+<a class="dropdown-item" href="./signin.html">Logout</a>
+</div>
+</div>
+
+</div>
+
+
+<div class="sidebar" id="sidebar">
+<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: 100%; height: 565px;"><div class="sidebar-inner slimscroll" style="overflow: hidden; width: 100%; height: 565px;">
+<div id="sidebar-menu" class="sidebar-menu">
+<ul>
+<li>
+<a href="./index.html"><img src="./editcategory_files/dashboard.svg" alt="img"><span> Dashboard</span> </a>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);" class="active subdrop"><img src="./editcategory_files/product.svg" alt="img"><span> Product</span> <span class="menu-arrow"></span></a>
+<ul style="display: block;">
+<li><a href="./productlist.html">Product List</a></li>
+<li><a href="./addproduct.html">Add Product</a></li>
+<li><a href="./categorylist.html">Category List</a></li>
+<li><a href="./addcategory.html" class="active">Add Category</a></li>
+<!--<li><a href="https://dreamspos.dreamguystech.com/html/template/subcategorylist.html">Sub Category List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/subaddcategory.html">Add Sub Category</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/brandlist.html">Brand List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/addbrand.html">Add Brand</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/importproduct.html">Import Products</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/barcode.html">Print Barcode</a></li>
+--></ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/sales1.svg" alt="img"><span> Sales</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="./saleslist.html">Sales List</a></li>
+<li><a href="./pos.html">POS</a></li>
+<li><a href="./pos.html">New Sales</a></li>
+<!--<li><a href="https://dreamspos.dreamguystech.com/html/template/salesreturnlists.html">Sales Return List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/createsalesreturns.html">New Sales Return</a></li>
+--></ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/purchase1.svg" alt="img"><span> Purchase</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="./purchaselist.html">Purchase List</a></li>
+<li><a href="./addpurchase.html">Add Purchase</a></li>
+<li><a href="./importpurchase.html">Import Purchase</a></li>
+</ul>
+</li>
+<!--<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/expense1.svg" alt="img"><span> Expense</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/expenselist.html">Expense List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/createexpense.html">Add Expense</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/expensecategory.html">Expense Category</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/quotation1.svg" alt="img"><span> Quotation</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/quotationList.html">Quotation List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/addquotation.html">Add Quotation</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/transfer1.svg" alt="img"><span> Transfer</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/transferlist.html">Transfer List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/addtransfer.html">Add Transfer </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/importtransfer.html">Import Transfer </a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/return1.svg" alt="img"><span> Return</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/salesreturnlist.html">Sales Return List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/createsalesreturn.html">Add Sales Return </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/purchasereturnlist.html">Purchase Return List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/createpurchasereturn.html">Add Purchase Return </a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/users1.svg" alt="img"><span> People</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/customerlist.html">Customer List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/addcustomer.html">Add Customer </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/supplierlist.html">Supplier List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/addsupplier.html">Add Supplier </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/userlist.html">User List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/adduser.html">Add User</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/storelist.html">Store List</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/addstore.html">Add Store</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/places.svg" alt="img"><span> Places</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/newcountry.html">New Country</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/countrieslist.html">Countries list</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/newstate.html">New State </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/statelist.html">State list</a></li>
+</ul>
+</li>
+<li>
+<a href="https://dreamspos.dreamguystech.com/html/template/components.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg><span> Components</span> </a>
+</li>
+<li>
+<a href="https://dreamspos.dreamguystech.com/html/template/blankpage.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg><span> Blank Page</span> </a>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> <span> Error Pages </span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/error-404.html">404 Error </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/error-500.html">500 Error </a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> <span>Elements </span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/sweetalerts.html">Sweet Alerts</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/tooltip.html">Tooltip</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/popover.html">Popover</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/ribbon.html">Ribbon</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/clipboard.html">Clipboard</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/drag-drop.html">Drag &amp; Drop</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/rangeslider.html">Range Slider</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/rating.html">Rating</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/toastr.html">Toastr</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/text-editor.html">Text Editor</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/counter.html">Counter</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/scrollbar.html">Scrollbar</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/spinner.html">Spinner</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/notification.html">Notification</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/lightbox.html">Lightbox</a></li>
+ <li><a href="https://dreamspos.dreamguystech.com/html/template/stickynote.html">Sticky Note</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/timeline.html">Timeline</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/form-wizard.html">Form Wizard</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> <span> Charts </span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/chart-apex.html">Apex Charts</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/chart-js.html">Chart Js</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/chart-morris.html">Morris Charts</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/chart-flot.html">Flot Charts</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/chart-peity.html">Peity Charts</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg><span> Icons </span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/icon-fontawesome.html">Fontawesome Icons</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/icon-feather.html">Feather Icons</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/icon-ionic.html">Ionic Icons</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/icon-material.html">Material Icons</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/icon-pe7.html">Pe7 Icons</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/icon-simpleline.html">Simpleline Icons</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/icon-themify.html">Themify Icons</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/icon-weather.html">Weather Icons</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/icon-typicon.html">Typicon Icons</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/icon-flag.html">Flag Icons</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-columns"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"></path></svg> <span> Forms </span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/form-basic-inputs.html">Basic Inputs </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/form-input-groups.html">Input Groups </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/form-horizontal.html">Horizontal Form </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/form-vertical.html"> Vertical Form </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/form-mask.html">Form Mask </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/form-validation.html">Form Validation </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/form-select2.html">Form Select2 </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/form-fileupload.html">File Upload </a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <span> Table </span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/tables-basic.html">Basic Tables </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/data-tables.html">Data Table </a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/product.svg" alt="img"><span> Application</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/chat.html">Chat</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/calendar.html">Calendar</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/email.html">Email</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/time.svg" alt="img"><span> Report</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/purchaseorderreport.html">Purchase order report</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/inventoryreport.html">Inventory Report</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/salesreport.html">Sales Report</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/invoicereport.html">Invoice Report</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/purchasereport.html">Purchase Report</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/supplierreport.html">Supplier Report</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/customerreport.html">Customer Report</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="./editcategory_files/users1.svg" alt="img"><span> Users</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/newuser.html">New User </a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/userlists.html">Users List</a></li>
+</ul>
+</li>
+<li class="submenu">
+ <a href="javascript:void(0);"><img src="./editcategory_files/settings.svg" alt="img"><span> Settings</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/generalsettings.html">General Settings</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/emailsettings.html">Email Settings</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/paymentsettings.html">Payment Settings</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/currencysettings.html">Currency Settings</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/grouppermissions.html">Group Permissions</a></li>
+<li><a href="https://dreamspos.dreamguystech.com/html/template/taxrates.html">Tax Rates</a></li>
+</ul>
+</li>-->
+</ul>
+</div>
+</div><div class="slimScrollBar" style="background: rgb(204, 204, 204); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 199.89px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+</div>
+
+<div class="page-wrapper">
+<div class="content">
+<div class="page-header">
+<div class="page-title">
+<h4>Product Edit Category</h4>
+<h6>Edit a product Category</h6>
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<div class="row">
+<div class="col-lg-6 col-sm-6 col-12">
+<div class="form-group">
+<label>Category Name</label>
+<input type="text" value="Computers">
+</div>
+</div>
+<div class="col-lg-6 col-sm-6 col-12">
+<div class="form-group">
+<label>Category Code</label>
+<input type="text" value="CT001">
+</div>
+</div>
+<div class="col-lg-12">
+<div class="form-group">
+<label>Description</label>
+<textarea class="form-control">Computers Description</textarea>
+</div>
+</div>
+<div class="col-lg-12">
+<div class="form-group">
+<label> Product Image</label>
+<div class="image-upload">
+<input type="file">
+<div class="image-uploads">
+<img src="./img/CLOUD DOWNLOAD ICON.svg" alt="img">
+<h4>Drag and drop a file to upload</h4>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12">
+<div class="product-list">
+<ul class="row">
+<li class="ps-0">
+<div class="productviews">
+<div class="productviewsimg">
+<img src="./editcategory_files/macbook.svg" alt="img">
+</div>
+<div class="productviewscontent">
+<div class="productviewsname">
+<h2>macbookpro.jpg</h2>
+<h3>581kb</h3>
+</div>
+<a href="javascript:void(0);" class="hideset">x</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-12">
+<a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
+<a href="./categorylist.html" class="btn btn-cancel">Cancel</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<script src="./editcategory_files/jquery-3.6.0.min.js.download"></script>
+
+<script src="./editcategory_files/feather.min.js.download"></script>
+
+<script src="./editcategory_files/jquery.slimscroll.min.js.download"></script>
+
+<script src="./editcategory_files/jquery.dataTables.min.js.download"></script>
+<script src="./editcategory_files/dataTables.bootstrap4.min.js.download"></script>
+
+<script src="./editcategory_files/bootstrap.bundle.min.js.download"></script>
+
+<script src="./editcategory_files/select2.min.js.download"></script>
+
+<script src="./editcategory_files/sweetalert2.all.min.js.download"></script>
+<script src="./editcategory_files/sweetalerts.min.js.download"></script>
+
+<script src="./editcategory_files/script.js.download"></script>
+
+<div class="sidebar-overlay"></div></body></html>
