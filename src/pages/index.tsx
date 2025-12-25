@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Layout from '@/components/Layout';
 import { db, Product, Sale, Category } from '@/lib/localStorage';
+import { FaBox, FaShoppingCart, FaCubes, FaFolder } from 'react-icons/fa';
 
 export default function Home() {
   const [stats, setStats] = useState({
@@ -36,109 +37,101 @@ export default function Home() {
 
   return (
     <Layout title="Dashboard - POS System">
-      <div className="page-header">
-        <div className="page-title">
-          <h4>Dashboard</h4>
-          <h6>Manage your store</h6>
-        </div>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
+        <p className="text-gray-600">Manage your store</p>
       </div>
 
-      <div className="row">
-        <div className="col-lg-3 col-sm-6 col-12">
-          <div className="dash-widget">
-            <div className="dash-widgetimg">
-              <span><i className="fas fa-box"></i></span>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h5 className="text-2xl font-bold text-gray-800">${stats.totalRevenue.toFixed(2)}</h5>
+              <h6 className="text-sm text-gray-600 mt-1">Total Revenue</h6>
             </div>
-            <div className="dash-widgetcontent">
-              <h5>${stats.totalRevenue.toFixed(2)}</h5>
-              <h6>Total Revenue</h6>
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+              <FaBox className="text-blue-600" size={24} />
             </div>
           </div>
         </div>
         
-        <div className="col-lg-3 col-sm-6 col-12">
-          <div className="dash-widget dash1">
-            <div className="dash-widgetimg">
-              <span><i className="fas fa-shopping-cart"></i></span>
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h5 className="text-2xl font-bold text-gray-800">{stats.totalSales}</h5>
+              <h6 className="text-sm text-gray-600 mt-1">Total Sales</h6>
             </div>
-            <div className="dash-widgetcontent">
-              <h5>{stats.totalSales}</h5>
-              <h6>Total Sales</h6>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-lg-3 col-sm-6 col-12">
-          <div className="dash-widget dash2">
-            <div className="dash-widgetimg">
-              <span><i className="fas fa-cubes"></i></span>
-            </div>
-            <div className="dash-widgetcontent">
-              <h5>{stats.totalProducts}</h5>
-              <h6>Total Products</h6>
+            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+              <FaShoppingCart className="text-green-600" size={24} />
             </div>
           </div>
         </div>
 
-        <div className="col-lg-3 col-sm-6 col-12">
-          <div className="dash-widget dash3">
-            <div className="dash-widgetimg">
-              <span><i className="fas fa-folder"></i></span>
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h5 className="text-2xl font-bold text-gray-800">{stats.totalProducts}</h5>
+              <h6 className="text-sm text-gray-600 mt-1">Total Products</h6>
             </div>
-            <div className="dash-widgetcontent">
-              <h5>{stats.totalCategories}</h5>
-              <h6>Total Categories</h6>
+            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+              <FaCubes className="text-purple-600" size={24} />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h5 className="text-2xl font-bold text-gray-800">{stats.totalCategories}</h5>
+              <h6 className="text-sm text-gray-600 mt-1">Total Categories</h6>
+            </div>
+            <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+              <FaFolder className="text-orange-600" size={24} />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="row">
-        <div className="col-lg-12 col-sm-12 col-12">
-          <div className="card">
-            <div className="card-header">
-              <h4 className="card-title">Recent Sales</h4>
-            </div>
-            <div className="card-body">
-              <div className="table-responsive">
-                <table className="table">
-                  <thead>
-                    <tr>
-                      <th>Sale ID</th>
-                      <th>Customer</th>
-                      <th>Date</th>
-                      <th>Total</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {recentSales.length === 0 ? (
-                      <tr>
-                        <td colSpan={5} className="text-center">No sales yet</td>
-                      </tr>
-                    ) : (
-                      recentSales.map((sale) => (
-                        <tr key={sale.id}>
-                          <td>#{sale.id}</td>
-                          <td>{sale.customerName || 'Walk-in Customer'}</td>
-                          <td>{new Date(sale.date).toLocaleDateString()}</td>
-                          <td>${sale.total.toFixed(2)}</td>
-                          <td>
-                            <span className={`badge badge-${
-                              sale.status === 'completed' ? 'success' : 
-                              sale.status === 'pending' ? 'warning' : 'danger'
-                            }`}>
-                              {sale.status}
-                            </span>
-                          </td>
-                        </tr>
-                      ))
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+      <div className="bg-white rounded-lg shadow-md">
+        <div className="px-6 py-4 border-b border-gray-200">
+          <h4 className="text-lg font-semibold text-gray-800">Recent Sales</h4>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sale ID</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {recentSales.length === 0 ? (
+                <tr>
+                  <td colSpan={5} className="px-6 py-4 text-center text-gray-500">No sales yet</td>
+                </tr>
+              ) : (
+                recentSales.map((sale) => (
+                  <tr key={sale.id} className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#{sale.id}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{sale.customerName || 'Walk-in Customer'}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{new Date(sale.date).toLocaleDateString()}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${sale.total.toFixed(2)}</td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                        sale.status === 'completed' ? 'bg-green-100 text-green-800' : 
+                        sale.status === 'pending' ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800'
+                      }`}>
+                        {sale.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
         </div>
       </div>
     </Layout>

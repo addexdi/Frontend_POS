@@ -1,7 +1,9 @@
 import { useState, FormEvent } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { db } from '@/lib/localStorage';
+import { FaEnvelope, FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function SignIn() {
   const router = useRouter();
@@ -35,82 +37,90 @@ export default function SignIn() {
         <title>Sign In - POS System</title>
       </Head>
 
-      <div className="main-wrapper">
-        <div className="account-content">
-          <div className="login-wrapper">
-            <div className="login-content">
-              <div className="login-userset">
-                <div className="login-logo">
-                  <img src="/img/BABS-SOLUTIONS.svg" alt="Logo" />
-                </div>
-                <div className="login-userheading">
-                  <h3>Sign In</h3>
-                  <h4>Please login to your account</h4>
-                </div>
-                
-                {error && (
-                  <div className="alert alert-danger" role="alert">
-                    {error}
-                  </div>
-                )}
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+          <div className="text-center mb-8">
+            <img src="/img/BABS-SOLUTIONS.svg" alt="Logo" className="h-12 mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-gray-900">Sign In</h2>
+            <p className="mt-2 text-sm text-gray-600">Please login to your account</p>
+          </div>
+          
+          {error && (
+            <div className="bg-red-50 border border-red-400 text-red-700 px-4 py-3 rounded mb-4" role="alert">
+              {error}
+            </div>
+          )}
 
-                <form onSubmit={handleSubmit}>
-                  <div className="form-login">
-                    <label>Email</label>
-                    <div className="form-addons">
-                      <input 
-                        type="email" 
-                        placeholder="Enter your email address"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                      />
-                      <img src="/img/mail.svg" alt="Email" />
-                    </div>
-                  </div>
-                  
-                  <div className="form-login">
-                    <label>Password</label>
-                    <div className="pass-group">
-                      <input 
-                        type={showPassword ? 'text' : 'password'} 
-                        className="pass-input" 
-                        placeholder="Enter your password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                      />
-                      <span 
-                        className={`fas toggle-password ${showPassword ? 'fa-eye' : 'fa-eye-slash'}`}
-                        onClick={() => setShowPassword(!showPassword)}
-                      ></span>
-                    </div>
-                  </div>
-                  
-                  <div className="form-login">
-                    <div className="alreadyuser">
-                      <h4>
-                        <a href="/forgetpassword" className="hover-a">Forgot Password?</a>
-                      </h4>
-                    </div>
-                  </div>
-                  
-                  <div className="form-login">
-                    <button type="submit" className="btn btn-login">Sign In</button>
-                  </div>
-                </form>
-
-                <div className="signinform text-center">
-                  <h4>Don't have an account? <a href="/signup" className="hover-a">Sign Up</a></h4>
-                </div>
-
-                <div className="form-setlogin">
-                  <h4>Default Credentials:</h4>
-                  <p>Email: admin@pos.com</p>
-                  <p>Password: admin123</p>
-                </div>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                Email
+              </label>
+              <div className="relative">
+                <input
+                  id="email"
+                  type="email" 
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="block w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                />
+                <FaEnvelope className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               </div>
             </div>
+            
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  id="password"
+                  type={showPassword ? 'text' : 'password'} 
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className="block w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+            </div>
+            
+            <div className="flex items-center justify-end">
+              <Link href="/forgetpassword" className="text-sm text-primary hover:text-primary-dark">
+                Forgot Password?
+              </Link>
+            </div>
+            
+            <button
+              type="submit"
+              className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
+            >
+              Sign In
+            </button>
+          </form>
+
+          <div className="mt-6 text-center">
+            <p className="text-sm text-gray-600">
+              Don't have an account?{' '}
+              <Link href="/signup" className="text-primary hover:text-primary-dark font-medium">
+                Sign Up
+              </Link>
+            </p>
+          </div>
+
+          <div className="mt-6 bg-gray-50 rounded-lg p-4">
+            <h4 className="text-sm font-semibold text-gray-900 mb-2">Default Credentials:</h4>
+            <p className="text-sm text-gray-600">Email: admin@pos.com</p>
+            <p className="text-sm text-gray-600">Password: admin123</p>
           </div>
         </div>
       </div>

@@ -36,72 +36,64 @@ export default function Sales() {
 
   return (
     <Layout title="Sales - POS System">
-      <div className="page-header">
-        <div className="page-title">
-          <h4>Sales List</h4>
-          <h6>Manage your sales</h6>
-        </div>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-gray-800">Sales List</h1>
+        <p className="text-gray-600">Manage your sales</p>
       </div>
 
-      <div className="card">
-        <div className="card-body">
-          <div className="table-top">
-            <div className="search-set">
-              <div className="search-input">
-                <input
-                  type="text"
-                  placeholder="Search sales..."
-                  className="form-control"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
-            </div>
-          </div>
+      <div className="bg-white rounded-lg shadow-md">
+        <div className="p-6 border-b border-gray-200">
+          <input
+            type="text"
+            placeholder="Search sales..."
+            className="w-full sm:w-64 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
 
-          <div className="table-responsive">
-            <table className="table">
-              <thead>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sale ID</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Items</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subtotal</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tax</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {filteredSales.length === 0 ? (
                 <tr>
-                  <th>Sale ID</th>
-                  <th>Customer</th>
-                  <th>Date</th>
-                  <th>Items</th>
-                  <th>Subtotal</th>
-                  <th>Tax</th>
-                  <th>Total</th>
-                  <th>Status</th>
+                  <td colSpan={8} className="px-6 py-4 text-center text-gray-500">No sales found</td>
                 </tr>
-              </thead>
-              <tbody>
-                {filteredSales.length === 0 ? (
-                  <tr>
-                    <td colSpan={8} className="text-center">No sales found</td>
+              ) : (
+                filteredSales.map((sale) => (
+                  <tr key={sale.id} className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#{sale.id}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{sale.customerName || 'Walk-in Customer'}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{formatDate(sale.date)}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{sale.items.length} item(s)</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${sale.subtotal.toFixed(2)}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${sale.tax.toFixed(2)}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">${sale.total.toFixed(2)}</td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                        sale.status === 'completed' ? 'bg-green-100 text-green-800' : 
+                        sale.status === 'pending' ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800'
+                      }`}>
+                        {sale.status}
+                      </span>
+                    </td>
                   </tr>
-                ) : (
-                  filteredSales.map((sale) => (
-                    <tr key={sale.id}>
-                      <td>#{sale.id}</td>
-                      <td>{sale.customerName || 'Walk-in Customer'}</td>
-                      <td>{formatDate(sale.date)}</td>
-                      <td>{sale.items.length} item(s)</td>
-                      <td>${sale.subtotal.toFixed(2)}</td>
-                      <td>${sale.tax.toFixed(2)}</td>
-                      <td>${sale.total.toFixed(2)}</td>
-                      <td>
-                        <span className={`badge badge-${
-                          sale.status === 'completed' ? 'success' : 
-                          sale.status === 'pending' ? 'warning' : 'danger'
-                        }`}>
-                          {sale.status}
-                        </span>
-                      </td>
-                    </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
-          </div>
+                ))
+              )}
+            </tbody>
+          </table>
         </div>
       </div>
     </Layout>

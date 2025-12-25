@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Layout from '@/components/Layout';
 import { db, Product, SaleItem } from '@/lib/localStorage';
+import { FaImage, FaMinus, FaPlus, FaTrash } from 'react-icons/fa';
 
 export default function POS() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -94,96 +95,92 @@ export default function POS() {
 
   return (
     <Layout title="POS - Point of Sale">
-      <div className="page-header">
-        <div className="page-title">
-          <h4>Point of Sale</h4>
-        </div>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-gray-800">Point of Sale</h1>
       </div>
 
-      <div className="row">
-        <div className="col-lg-8 col-sm-12">
-          <div className="card">
-            <div className="card-body">
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Search products..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2">
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="mb-6">
+              <input
+                type="text"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                placeholder="Search products..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
 
-              <div className="row">
-                {filteredProducts.length === 0 ? (
-                  <div className="col-12 text-center">
-                    <p>No products found</p>
-                  </div>
-                ) : (
-                  filteredProducts.map((product) => (
-                    <div key={product.id} className="col-lg-3 col-sm-6 col-12">
-                      <div className="product-card" onClick={() => addToCart(product)}>
-                        <div className="product-img">
-                          {product.image ? (
-                            <img src={product.image} alt={product.name} />
-                          ) : (
-                            <div className="product-placeholder">
-                              <i className="fas fa-image"></i>
-                            </div>
-                          )}
-                        </div>
-                        <div className="product-info">
-                          <h6>{product.name}</h6>
-                          <p>${product.price.toFixed(2)}</p>
-                          <small>Stock: {product.quantity}</small>
-                        </div>
-                      </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {filteredProducts.length === 0 ? (
+                <div className="col-span-full text-center py-8 text-gray-500">
+                  <p>No products found</p>
+                </div>
+              ) : (
+                filteredProducts.map((product) => (
+                  <div
+                    key={product.id}
+                    onClick={() => addToCart(product)}
+                    className="border border-gray-200 rounded-lg p-3 cursor-pointer hover:shadow-lg hover:border-primary transition-all duration-200"
+                  >
+                    <div className="aspect-square mb-3 flex items-center justify-center overflow-hidden rounded-md bg-gray-100">
+                      {product.image ? (
+                        <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                      ) : (
+                        <FaImage className="text-gray-400 text-4xl" />
+                      )}
                     </div>
-                  ))
-                )}
-              </div>
+                    <div>
+                      <h6 className="text-sm font-semibold text-gray-800 mb-1 line-clamp-2">{product.name}</h6>
+                      <p className="text-lg font-bold text-primary mb-1">${product.price.toFixed(2)}</p>
+                      <small className="text-xs text-gray-500">Stock: {product.quantity}</small>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>
 
-        <div className="col-lg-4 col-sm-12">
-          <div className="card">
-            <div className="card-header">
-              <h4 className="card-title">Cart</h4>
+        <div className="lg:col-span-1">
+          <div className="bg-white rounded-lg shadow-md sticky top-6">
+            <div className="px-6 py-4 border-b border-gray-200">
+              <h4 className="text-lg font-semibold text-gray-800">Cart</h4>
             </div>
-            <div className="card-body">
-              <div className="cart-items">
+            <div className="p-6">
+              <div className="max-h-96 overflow-y-auto mb-4">
                 {cart.length === 0 ? (
-                  <p className="text-center">Cart is empty</p>
+                  <p className="text-center text-gray-500 py-8">Cart is empty</p>
                 ) : (
                   cart.map((item) => (
-                    <div key={item.productId} className="cart-item">
-                      <div className="cart-item-info">
-                        <h6>{item.productName}</h6>
-                        <p>${item.price.toFixed(2)} x {item.quantity}</p>
+                    <div key={item.productId} className="flex items-center gap-3 py-3 border-b border-gray-200 last:border-0">
+                      <div className="flex-1 min-w-0">
+                        <h6 className="text-sm font-semibold text-gray-800 truncate">{item.productName}</h6>
+                        <p className="text-xs text-gray-500">${item.price.toFixed(2)} x {item.quantity}</p>
                       </div>
-                      <div className="cart-item-actions">
+                      <div className="flex items-center gap-2">
                         <button 
                           onClick={() => updateQuantity(item.productId, item.quantity - 1)}
-                          className="btn btn-sm btn-secondary"
+                          className="w-8 h-8 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded transition-colors"
                         >
-                          -
+                          <FaMinus size={12} />
                         </button>
-                        <span className="mx-2">{item.quantity}</span>
+                        <span className="w-8 text-center font-medium">{item.quantity}</span>
                         <button 
                           onClick={() => updateQuantity(item.productId, item.quantity + 1)}
-                          className="btn btn-sm btn-secondary"
+                          className="w-8 h-8 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded transition-colors"
                         >
-                          +
+                          <FaPlus size={12} />
                         </button>
                         <button 
                           onClick={() => removeFromCart(item.productId)}
-                          className="btn btn-sm btn-danger ml-2"
+                          className="w-8 h-8 flex items-center justify-center bg-red-500 hover:bg-red-600 text-white rounded transition-colors ml-1"
                         >
-                          <i className="fas fa-trash"></i>
+                          <FaTrash size={12} />
                         </button>
                       </div>
-                      <div className="cart-item-total">
+                      <div className="font-bold text-primary text-sm">
                         ${item.total.toFixed(2)}
                       </div>
                     </div>
@@ -193,24 +190,24 @@ export default function POS() {
 
               {cart.length > 0 && (
                 <>
-                  <div className="cart-summary">
-                    <div className="summary-row">
-                      <span>Subtotal:</span>
-                      <span>${getSubtotal().toFixed(2)}</span>
+                  <div className="border-t-2 border-gray-200 pt-4 mb-4 space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">Subtotal:</span>
+                      <span className="font-medium">${getSubtotal().toFixed(2)}</span>
                     </div>
-                    <div className="summary-row">
-                      <span>Tax (10%):</span>
-                      <span>${getTax().toFixed(2)}</span>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">Tax (10%):</span>
+                      <span className="font-medium">${getTax().toFixed(2)}</span>
                     </div>
-                    <div className="summary-row total">
-                      <span><strong>Total:</strong></span>
-                      <span><strong>${getTotal().toFixed(2)}</strong></span>
+                    <div className="flex justify-between text-lg font-bold border-t border-gray-200 pt-2 mt-2">
+                      <span>Total:</span>
+                      <span className="text-primary">${getTotal().toFixed(2)}</span>
                     </div>
                   </div>
 
                   <button 
                     onClick={handleCheckout}
-                    className="btn btn-primary btn-block"
+                    className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
                   >
                     Complete Sale
                   </button>
