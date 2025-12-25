@@ -17,8 +17,8 @@ A modern Point of Sale (POS) system built with Next.js and TypeScript, using bro
 - **Frontend & Backend**: Next.js 14
 - **Language**: TypeScript
 - **Database**: Browser Local Storage
-- **Styling**: Bootstrap 5 + Custom CSS
-- **Icons**: Font Awesome
+- **Styling**: Tailwind CSS
+- **Icons**: React Icons
 
 ## Getting Started
 
@@ -64,24 +64,24 @@ npm start
 Frontend_POS/
 ├── src/
 │   ├── components/       # React components
-│   │   └── Layout.tsx   # Main layout component
+│   │   └── Layout.tsx   # Main layout component with sidebar
 │   ├── lib/             # Utility libraries
 │   │   └── localStorage.ts  # Local storage database
 │   ├── pages/           # Next.js pages
-│   │   ├── api/        # API routes (future use)
-│   │   ├── categories/ # Category pages
-│   │   ├── products/   # Product pages
-│   │   ├── sales/      # Sales pages
-│   │   ├── _app.tsx    # App wrapper
+│   │   ├── categories/  # Category pages
+│   │   ├── products/    # Product pages
+│   │   ├── sales/       # Sales pages
+│   │   ├── _app.tsx     # App wrapper
 │   │   ├── _document.tsx
-│   │   ├── index.tsx   # Dashboard
-│   │   ├── pos.tsx     # POS interface
-│   │   └── signin.tsx  # Login page
-│   └── styles/         # CSS styles
-├── public/             # Static assets
-│   ├── css/           # Stylesheets
-│   ├── img/           # Images
-│   └── js/            # JavaScript files
+│   │   ├── index.tsx    # Dashboard
+│   │   ├── pos.tsx      # POS interface
+│   │   └── signin.tsx   # Login page
+│   └── styles/          # Global styles
+│       └── globals.css  # Tailwind CSS imports
+├── public/              # Static assets
+│   ├── img/            # Images
+│   └── js/             # JavaScript files
+├── tailwind.config.js   # Tailwind configuration
 └── package.json
 ```
 
