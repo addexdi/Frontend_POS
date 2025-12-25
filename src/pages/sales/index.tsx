@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import Layout from '@/components/Layout';
 import { db, Sale } from '@/lib/localStorage';
 
@@ -19,10 +19,20 @@ export default function Sales() {
     setSales(sortedSales);
   };
 
-  const filteredSales = sales.filter(sale =>
-    sale.id.includes(searchTerm) ||
-    (sale.customerName && sale.customerName.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  const filteredSales = useMemo(() => {
+    return sales.filter(sale =>
+      sale.id.includes(searchTerm) ||
+      (sale.customerName && sale.customerName.toLowerCase().includes(searchTerm.toLowerCase()))
+    );
+  }, [sales, searchTerm]);
+
+  const formatDate = (dateString: string): string => {
+    try {
+      return new Date(dateString).toLocaleDateString();
+    } catch {
+      return 'Invalid date';
+    }
+  };
 
   return (
     <Layout title="Sales - POS System">
@@ -73,7 +83,7 @@ export default function Sales() {
                     <tr key={sale.id}>
                       <td>#{sale.id}</td>
                       <td>{sale.customerName || 'Walk-in Customer'}</td>
-                      <td>{new Date(sale.date).toLocaleDateString()}</td>
+                      <td>{formatDate(sale.date)}</td>
                       <td>{sale.items.length} item(s)</td>
                       <td>${sale.subtotal.toFixed(2)}</td>
                       <td>${sale.tax.toFixed(2)}</td>
