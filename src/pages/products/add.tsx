@@ -44,116 +44,109 @@ export default function AddProduct() {
 
   return (
     <Layout title="Add Product - POS System">
-      <div className="page-header">
-        <div className="page-title">
-          <h4>Add Product</h4>
-          <h6>Create new product</h6>
-        </div>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-gray-800">Add Product</h1>
+        <p className="text-gray-600">Create new product</p>
       </div>
 
-      <div className="card">
-        <div className="card-body">
-          <form onSubmit={handleSubmit}>
-            <div className="row">
-              <div className="col-lg-6 col-sm-12">
-                <div className="form-group">
-                  <label>Product Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    className="form-control"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="col-lg-6 col-sm-12">
-                <div className="form-group">
-                  <label>SKU</label>
-                  <input
-                    type="text"
-                    name="sku"
-                    className="form-control"
-                    value={formData.sku}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="col-lg-6 col-sm-12">
-                <div className="form-group">
-                  <label>Category</label>
-                  <select
-                    name="category"
-                    className="form-control"
-                    value={formData.category}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">Choose Category</option>
-                    {categories.map((category) => (
-                      <option key={category.id} value={category.name}>
-                        {category.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <div className="col-lg-6 col-sm-12">
-                <div className="form-group">
-                  <label>Price</label>
-                  <input
-                    type="number"
-                    name="price"
-                    step="0.01"
-                    className="form-control"
-                    value={formData.price}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="col-lg-6 col-sm-12">
-                <div className="form-group">
-                  <label>Quantity</label>
-                  <input
-                    type="number"
-                    name="quantity"
-                    className="form-control"
-                    value={formData.quantity}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="col-lg-12">
-                <div className="form-group">
-                  <label>Description</label>
-                  <textarea
-                    name="description"
-                    className="form-control"
-                    rows={3}
-                    value={formData.description}
-                    onChange={handleChange}
-                  ></textarea>
-                </div>
-              </div>
-
-              <div className="col-lg-12">
-                <button type="submit" className="btn btn-submit me-2">Submit</button>
-                <button type="button" className="btn btn-cancel" onClick={() => router.push('/products')}>
-                  Cancel
-                </button>
-              </div>
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <form onSubmit={handleSubmit}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Product Name</label>
+              <input
+                type="text"
+                name="name"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
             </div>
-          </form>
-        </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">SKU</label>
+              <input
+                type="text"
+                name="sku"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                value={formData.sku}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+              <select
+                name="category"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                value={formData.category}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Choose Category</option>
+                {categories.map((category) => (
+                  <option key={category.id} value={category.name}>
+                    {category.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Price</label>
+              <input
+                type="number"
+                name="price"
+                step="0.01"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                value={formData.price}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Quantity</label>
+              <input
+                type="number"
+                name="quantity"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                value={formData.quantity}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
+              <textarea
+                name="description"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                rows={3}
+                value={formData.description}
+                onChange={handleChange}
+              ></textarea>
+            </div>
+
+            <div className="md:col-span-2 flex gap-4">
+              <button
+                type="submit"
+                className="px-6 py-2 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors"
+              >
+                Submit
+              </button>
+              <button
+                type="button"
+                className="px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors"
+                onClick={() => router.push('/products')}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </Layout>
   );
